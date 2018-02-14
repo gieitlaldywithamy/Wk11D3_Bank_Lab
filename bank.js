@@ -13,6 +13,11 @@ Bank.prototype.accountByName = function (name){
   return account;
 }
 
+// Bank.prototype.largestAccount = function(){
+//   return this.accounts.reduce(function(largest, account){
+//     return largest.value > account.value ? largest : account;
+//   })
+// }
 Bank.prototype.largestAccount = function(){
   let tempAccount = this.accounts[0];
 
@@ -25,11 +30,11 @@ Bank.prototype.largestAccount = function(){
 }
 
 Bank.prototype.payInterest = function(){
-  const mappedArray = this.accounts.map(function(account){
+  return this.accounts.map(function(account){
     account.value *= 1.1;
     return account;
   })
-  this.accounts = mappedArray;
+
 }
 
 Bank.prototype.businessAccounts = function(){
